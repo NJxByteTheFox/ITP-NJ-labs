@@ -1,0 +1,32 @@
+
+For i = 0 To 5 Step 1
+  TextWindow.Clear()
+
+  TextWindow.Write("Name a City: ")
+  name = TextWindow.Read()
+
+  TextWindow.Write("What is " + name + "'s average temperature")
+  temp = TextWindow.ReadNumber()
+
+  sort()
+EndFor
+
+Goto End
+
+Sub sort
+  If temp > 80 Then
+   hc = hc + 1
+  Else If temp > 60 Then
+   wc = wc + 1
+  Else If temp > 30 Then
+   clc = clc + 1
+  Else 
+   cc = cc + 1
+  EndIf
+EndSub
+
+End:
+
+TextWindow.Clear()
+
+TextWindow.WriteLine("There are " + hc + " hot cities, "+ wc +" warm cities, "+ clc +" cool cities and, "+ cc +" cold cities")
